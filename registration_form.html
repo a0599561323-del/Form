@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
+</head>
+<body>
+    <h1>Student Registration</h1>
+
+    <form action="/register" method="POST" enctype="multipart/form-data">
+
+        <!-- Personal Information -->
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="fullname">Full Name:</label><br>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name"
+                   required minlength="3" maxlength="50" autofocus><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required><br><br>
+
+            <label for="phone">Phone (059-xxx-xxxx):</label><br>
+            <input type="tel" id="phone" name="phone" placeholder="059-123-4567"
+                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 059-123-4567" required><br><br>
+
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="date_of_birth" min="1960-01-01" max="2010-12-31" required><br><br>
+
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+        </fieldset>
+
+        <!-- Account Settings -->
+        <fieldset>
+            <legend>Account Settings</legend>
+
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" placeholder="Choose a username"
+                   required pattern="[A-Za-z0-9]{3,20}"
+                   title="3-20 characters, letters and numbers only"><br><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="Min 8 characters"
+                   required minlength="8">
+        </fieldset>
+
+        <!-- Academic Information -->
+        <fieldset>
+            <legend>Academic Information</legend>
+
+            <label for="major">Major:</label><br>
+            <select id="major" name="major" required>
+                <option value="">-- Select Major --</option>
+                <optgroup label="Computing">
+                    <option value="cs">Computer Science</option>
+                    <option value="it">Information Technology</option>
+                    <option value="mis">Management Info Systems</option>
+                </optgroup>
+                <optgroup label="Mathematics">
+                    <option value="math">Mathematics</option>
+                    <option value="stats">Statistics</option>
+                </optgroup>
+            </select><br><br>
+
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" min="16" max="65" step="1" value="20" required><br><br>
+
+            <label for="browser">Favorite Browser:</label><br>
+            <input type="text" id="browser" name="browser" list="browsers" placeholder="Choose or type your own">
+            <datalist id="browsers">
+                <option value="Chrome">
+                <option value="Firefox">
+                <option value="Safari">
+                <option value="Edge">
+                <option value="Opera">
+            </datalist><br><br>
+
+            <label>Study Level:</label><br>
+            <input type="radio" id="level1" name="level" value="year1" checked>
+            <label for="level1">Year 1</label>
+            <input type="radio" id="level2" name="level" value="year2">
+            <label for="level2">Year 2</label>
+            <input type="radio" id="level3" name="level" value="year3">
+            <label for="level3">Year 3</label>
+            <input type="radio" id="level4" name="level" value="year4">
+            <label for="level4">Year 4</label><br><br>
+
+            <label for="skill">Web Development Skill Level (1-10):</label><br>
+            <input type="range" id="skill" name="skill_level" min="1" max="10" value="5">
+        </fieldset>
+
+        <!-- Interests & Uploads -->
+        <fieldset>
+            <legend>Interests &amp; Uploads</legend>
+
+            <label>Interests:</label><br>
+            <input type="checkbox" id="coding" name="interests" value="coding" checked>
+            <label for="coding">Coding</label>
+            <input type="checkbox" id="design" name="interests" value="design">
+            <label for="design">Design</label>
+            <input type="checkbox" id="gaming" name="interests" value="gaming">
+            <label for="gaming">Gaming</label>
+            <input type="checkbox" id="reading" name="interests" value="reading">
+            <label for="reading">Reading</label><br><br>
+
+            <label for="website">Personal Website (optional):</label><br>
+            <input type="url" id="website" name="website" placeholder="https://example.com"><br><br>
+
+            <label for="photo">Profile Photo:</label><br>
+            <input type="file" id="photo" name="photo" accept="image/*"><br><br>
+
+            <label for="resume">Resume (PDF/Word):</label><br>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx"><br><br>
+
+            <label for="bio">Tell us about yourself:</label><br>
+            <textarea id="bio" name="bio" rows="5" cols="50" maxlength="300" required
+                      placeholder="Write a short bio (max 300 characters)..."></textarea>
+        </fieldset>
+
+        <!-- Agreements -->
+        <fieldset>
+            <legend>Agreements</legend>
+
+            <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+            <label for="newsletter">Subscribe to newsletter</label><br>
+
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the Terms &amp; Conditions</label>
+        </fieldset>
+
+        <br>
+        <button type="submit">Register</button>
+        <button type="reset">Clear Form</button>
+
+    </form>
+</body>
+</html>
